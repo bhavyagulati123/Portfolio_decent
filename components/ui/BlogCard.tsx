@@ -2,12 +2,13 @@
 import { useState } from "react";
 import { colors, mono } from "@/lib/constants";
 import type { Blog } from "@/types";
+import Link from "next/link";
 
 export default function BlogCard({ blog }: { blog: Blog }) {
   const [hovered, setHovered] = useState(false);
   return (
-    <a
-      href="#"
+    <Link
+      href={`/blog/${blog.slug}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -53,6 +54,6 @@ export default function BlogCard({ blog }: { blog: Blog }) {
       >
         Read more →
       </div>
-    </a>
+    </Link>
   );
 }

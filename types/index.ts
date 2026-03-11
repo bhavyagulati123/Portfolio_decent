@@ -17,10 +17,12 @@ export interface Experience {
 }
 
 export interface Blog {
+  slug: string;
   tag: string;
   date: string;
   title: string;
   excerpt: string;
+  content: string[];
 }
 
 export interface Education {
